@@ -287,3 +287,291 @@ ________________________________________
 
 ## human intelligence
 
+## Threat Intelligence Standard
+
+(Detailed Controls – Audit Ready | Enterprise Cybersecurity Standard)
+________________________________________
+1. Document Control
+Field	Value
+Standard Name	Threat Intelligence Standard
+Standard ID	SEC-TI-STD-001
+Version	1.0
+Owner	CISO Office
+Classification	Confidential
+Review Cycle	Annual
+________________________________________
+2. Purpose
+This standard defines mandatory controls, procedures, and technical requirements for implementing the Threat Intelligence Policy across the enterprise.
+________________________________________
+3. Scope
+Applies to:
+•	Threat Intelligence Platform (TIP)
+•	SIEM, SOAR, EDR/XDR integrations
+•	SOC, Threat Hunting, Incident Response teams
+•	All environments (on-prem, cloud, hybrid)
+________________________________________
+4. Control Framework Alignment
+This standard aligns with:
+•	NIST CSF (ID.RA, DE.CM, RS.AN)
+•	ISO 27001 (A.5, A.12, A.16)
+•	SOC 2 (Security, Availability)
+________________________________________
+5. Control Domains
+________________________________________
+5.1 Governance & Management Controls
+TI-GOV-01: Program Establishment
+•	A formal Threat Intelligence Program must be established and documented.
+Control Requirements:
+•	Defined objectives and scope
+•	Approved by CISO
+Evidence:
+•	Program charter
+•	Policy document
+________________________________________
+TI-GOV-02: Roles & Responsibilities
+•	Roles must be formally defined.
+Control Requirements:
+•	TI Analysts, SOC Analysts, Threat Hunters
+•	RACI matrix maintained
+Evidence:
+•	Org charts
+•	Role descriptions
+________________________________________
+TI-GOV-03: Intelligence Requirements
+•	Priority Intelligence Requirements (PIRs) must be defined and reviewed quarterly.
+Evidence:
+•	PIR document
+•	Review meeting minutes
+________________________________________
+5.2 Threat Intelligence Lifecycle Controls
+________________________________________
+TI-LC-01: Direction
+Requirement:
+•	Intelligence requirements must align with business risks.
+Control Activities:
+•	Define PIRs
+•	Map to risk register
+________________________________________
+TI-LC-02: Collection
+Requirement:
+•	Intelligence must be collected from approved sources only.
+Control Activities:
+•	Maintain source inventory
+•	Validate source reliability
+Evidence:
+•	Source registry
+•	Vendor contracts
+________________________________________
+TI-LC-03: Processing
+Requirement:
+•	Data must be normalized and deduplicated.
+Control Activities:
+•	STIX/TAXII formatting
+•	Deduplication rules
+________________________________________
+TI-LC-04: Analysis
+Requirement:
+•	Intelligence must be contextualized and actionable.
+Control Activities:
+•	Threat actor analysis
+•	TTP mapping to MITRE ATT&CK
+________________________________________
+TI-LC-05: Dissemination
+Requirement:
+•	Intelligence must be shared with relevant stakeholders.
+Control Activities:
+•	SOC alerts
+•	Executive reports
+________________________________________
+TI-LC-06: Feedback
+Requirement:
+•	Continuous improvement must be implemented.
+Control Activities:
+•	Post-incident reviews
+•	Feedback loops
+________________________________________
+5.3 Data Management Controls
+________________________________________
+TI-DATA-01: Data Classification
+Requirement:
+•	Intelligence must be classified per data classification policy.
+________________________________________
+TI-DATA-02: Data Protection
+Requirement:
+•	Data must be protected using encryption and RBAC.
+Control Activities:
+•	Encryption at rest and in transit
+•	Access control enforcement
+________________________________________
+TI-DATA-03: Data Retention
+Requirement:
+•	Retention policies must be defined.
+Example:
+•	IOCs retained for 90 days unless extended
+________________________________________
+TI-DATA-04: Data Quality
+Requirement:
+•	Intelligence must meet quality thresholds.
+Control Activities:
+•	Confidence scoring
+•	False positive analysis
+________________________________________
+5.4 Technology & Integration Controls
+________________________________________
+TI-TECH-01: TIP Implementation
+Requirement:
+•	A Threat Intelligence Platform must be deployed.
+________________________________________
+TI-TECH-02: SIEM Integration
+Requirement:
+•	Intelligence must be integrated with SIEM.
+Control Activities:
+•	IOC ingestion
+•	Alert enrichment
+________________________________________
+TI-TECH-03: SOAR Integration
+Requirement:
+•	Automation must be implemented.
+Control Activities:
+•	Automated playbooks
+•	Incident response automation
+________________________________________
+TI-TECH-04: EDR/XDR Integration
+Requirement:
+•	Endpoint telemetry must be integrated.
+________________________________________
+TI-TECH-05: API Security
+Requirement:
+•	All integrations must use secure APIs.
+Control Activities:
+•	Authentication (OAuth, API keys)
+•	Logging
+________________________________________
+5.5 Operational Controls
+________________________________________
+TI-OPS-01: IOC Management
+Requirement:
+•	IOCs must be validated before use.
+Control Activities:
+•	Enrichment
+•	TTL assignment
+________________________________________
+TI-OPS-02: Alert Enrichment
+Requirement:
+•	All alerts must be enriched with intelligence.
+________________________________________
+TI-OPS-03: Threat Hunting
+Requirement:
+•	Intelligence-driven threat hunting must be conducted.
+________________________________________
+TI-OPS-04: Incident Response Support
+Requirement:
+•	Intelligence must support incident investigations.
+________________________________________
+5.6 Automation & SOAR Controls
+________________________________________
+TI-AUTO-01: Automation Governance
+Requirement:
+•	Automation must be controlled and approved.
+________________________________________
+TI-AUTO-02: Playbook Management
+Requirement:
+•	Playbooks must be documented and version-controlled.
+________________________________________
+TI-AUTO-03: Decision Logic
+Requirement:
+•	Automation must use confidence scoring.
+________________________________________
+5.7 Threat Intelligence Sharing Controls
+________________________________________
+TI-SHARE-01: Internal Sharing
+•	Intelligence must be shared across SOC and stakeholders.
+________________________________________
+TI-SHARE-02: External Sharing
+Requirement:
+•	Only approved channels may be used.
+________________________________________
+TI-SHARE-03: Legal Compliance
+Requirement:
+•	Sharing must comply with legal requirements.
+________________________________________
+5.8 Monitoring & Metrics Controls
+________________________________________
+TI-MET-01: KPI Definition
+•	KPIs must be defined and tracked.
+________________________________________
+TI-MET-02: Performance Monitoring
+Metrics:
+•	MTTD / MTTR
+•	IOC utilization
+•	False positive rate
+________________________________________
+TI-MET-03: Reporting
+•	Regular reporting must be performed.
+________________________________________
+5.9 Risk Management Controls
+________________________________________
+TI-RISK-01: Risk Identification
+•	Risks related to intelligence must be identified.
+________________________________________
+TI-RISK-02: Risk Mitigation
+•	Mitigation strategies must be implemented.
+________________________________________
+5.10 Audit & Compliance Controls
+________________________________________
+TI-AUD-01: Audit Readiness
+Requirement:
+•	Evidence must be maintained for all controls.
+________________________________________
+TI-AUD-02: Periodic Audits
+•	Internal audits must be conducted annually.
+________________________________________
+TI-AUD-03: Control Testing
+•	Controls must be tested periodically.
+________________________________________
+6. Evidence Requirements (Audit Checklist)
+Control	Evidence
+TI-GOV-01	Policy, Charter
+TI-LC-02	Source inventory
+TI-DATA-02	Encryption configs
+TI-TECH-02	SIEM configs
+TI-OPS-01	IOC logs
+TI-AUTO-02	Playbook docs
+________________________________________
+7. Maturity Model
+Level	Description
+Level 1	Ad hoc
+Level 2	Basic
+Level 3	Defined
+Level 4	Managed
+Level 5	Optimized
+________________________________________
+8. Exceptions Management
+•	Exceptions must be:
+o	Documented
+o	Approved by CISO
+o	Time-bound
+________________________________________
+9. Enforcement
+Non-compliance may result in:
+•	Access revocation
+•	Disciplinary action
+•	Escalation to leadership
+________________________________________
+10. Continuous Improvement
+•	Lessons learned
+•	Threat landscape updates
+•	Technology enhancements
+________________________________________
+11. Conclusion
+This standard ensures that Threat Intelligence is:
+Controlled, measurable, auditable, and aligned with enterprise risk and compliance requirements
+________________________________________
+If you want next-level (audit + consulting grade package)
+I can build:
+•	Excel-based audit checklist (mapped to each control)
+•	ISO 27001 / NIST cross-mapping sheet
+•	Evidence collection templates (ready for auditors)
+•	Internal audit questionnaire (Big-4 style)
+Just tell me 👍
+
