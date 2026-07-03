@@ -6,7 +6,6 @@ Mirai Botnet:
 Example: Compromised IoT devices, such as cameras and routers, are used collectively as a botnet to flood a 
 target with traffic, disrupting its services.
 
-
 Purpose
 
 Query
