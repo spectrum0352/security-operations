@@ -293,3 +293,119 @@ When creating dashboards, consider the following factors:
 - Implement drill-down capabilities to allow users to explore data in greater detail.
 - Ensure the dashboard is easy to navigate and understand.
 - Test the dashboard with end users and incorporate their feedback.
+
+Planning
+
+Review architecture requirements
+•	Device onboarding through Microsoft endpoint manager (Intune), SCCM, Group policy, and Script
+•	On-boarded devices provide and respond to MDE signal data.
+•	Managed devices are joined and/or enrolled in Azure Active Directory.
+•	Domain-joined Windows devices are synchronized to Azure Active Directory using Azure Active Directory Connect.
+•	MDE alerts, investigations, and responses are managed in Microsoft 365 Defender.
+
+Enable in PoC environment
+
+•	Define security requirements and objectives: Collaborate with stakeholders to identify and prioritize security requirements for endpoint protection. Establish clear objectives for the implementation of MDE.
+•	Assess current endpoint security posture: Conduct a thorough assessment of the existing endpoint security environment, including hardware, software, and network configurations. Identify any vulnerabilities or gaps in the current protection measures.
+•	Design MDE deployment strategy: Develop a comprehensive plan for deploying MDE across the organization. Consider factors such as device compatibility, network topology, and user impact.
+•	Configure MDE settings: Configure MDE settings to align with the organization's security requirements and risk tolerance. Adjust detection thresholds, enable relevant features, and define remediation actions.
+•	Integrate MDE with other security tools: Integrate MDE with existing security tools, such as SIEM and SOAR solutions, to streamline threat detection and response workflows. Establish data sharing mechanisms and automated incident response procedures.
+•	Monitor and analyse MDE data: Continuously monitor MDE alerts and reports to identify potential threats and security incidents. Analyze data to gain insights into attack patterns and trends.
+•	Train users: Provide training to end users on MDE and its capabilities. 
+•	Onboarded On-prem and Azure VMs on MDE.
+•	Performed testing of insider risk policies and communicate findings.
+•	Supported team for implementation of MDE.
+•	Device Discovery Configuration settings
+•	Setting up MDE Tenant environment
+•	Provided training to users to educate on MDE capabilities.
+•	Develop a communication plan to inform users about the MDE deployment and potential impacts.
+
+Pilot project planning 
+•	Consider a pilot deployment on a smaller group of devices to test functionality and configuration before full rollout. 
+•	Define the pilot scope (e.g., specific departments or locations).
+•	 Start with a pilot deployment to a limited number of devices to validate the design and settings.
+•	Gradually increase the scope of the deployment to all devices.
+
+Deploy using Ring based approach
+•	Evaluate (Ring-1): Identify 50 devices to onboard to the service for testing.
+•	Pilot (Ring-2): 
+o	Identify and onboard the next 50-100 endpoints in a production environment. 
+o	MDE supports various endpoints that you can onboard to the service.
+•	Full deployment (Ring-3): Roll out service to the rest of environment in larger increments.
+
+Architecture assessment
+Identify types of environments you have: on-premises, Azure, AWS, GCP, Hybrid, Multi-cloud
+o	Identify the different environments (on-premises, cloud platforms) 
+o	Identify number of endpoints in each environment
+•	Identify Your Architecture and Choose Your Deployment Method: Identify your architecture and the deployment method that best suits your organization2.
+•	Design the deployment structure considering the location of endpoints (on-premises, Azure, AWS, GCP).
+
+<img width="484" height="99" alt="image" src="https://github.com/user-attachments/assets/c6035c3b-225c-4408-9f2c-3593f3fee175" />
+
+•	Identify the types and numbers of endpoints (servers, clients).
+o	Servers: 8000
+o	Clients: 6000
+•	Identify the operating systems used (Windows, Linux).
+o	Servers: Windows 2012 and later servers
+o	Clients: Windows 10/11
+•	Identify the locations of these endpoints (on-premises, Azure, AWS, GCP).
+o	On-premises: 1500 servers, 6000 clients
+o	Azure: 5500
+o	AWS: 500
+o	GCP: 500
+
+
+
+Identify your architecture 
+Identify your architecture best represents your enterprise
+•	Cloud-native - recommended to use Microsoft Intune
+•	Co-management (Hybrid on-prem + cloud) - recommended to use Microsoft Intune and Microsoft Configuration manager
+•	On-premises - recommended to use Microsoft Configuration manager and ADDS Group policy
+•	Evaluation and local onboarding - recommended to use Local scripts for SOC pilot project.
+ 
+ 
+Prepare asset inventory
+•	Create Inventory of all your endpoints: desktops, servers, mobile devices
+•	Identify Operating system types: Windows, Linux, MacOS, Android, etc.
+
+
+Deploying Microsoft Defender for Endpoint (MDE)
+This document outlines the steps for deploying and initially configuring Microsoft Defender for Endpoint (MDE).
+
+Deployment:
+1.	Environment Preparation: 
+o	Verify devices and networks meet MDE system requirements.
+o	Choose a deployment method: 
+	Microsoft Endpoint Configuration Manager (MECM/ConfigMgr)
+	Microsoft Intune
+	Standalone Installer
+2.	Deployment Package Creation (MECM/Intune): Create the MDE agent deployment package.
+3.	Agent Download (Standalone): Download the MDE agent from the Microsoft Download Center.
+4.	Agent Installation: Install the MDE agent on each target device.
+
+Onboarding Devices:
+1.	MDE Portal Access: Access the Microsoft 365 Defender portal (formerly MD-XDR).
+2.	Onboarding Section: Navigate to "Endpoints" > "Onboarding."
+3.	OS Selection: Choose the target device operating system.
+4.	Deployment Method Selection: Select the chosen deployment method.
+5.	Onboarding Instructions: Follow the provided instructions to deploy the agent.
+
+Configuration:
+1.	MDE Portal Access: Access the Microsoft 365 Defender portal.
+2.	Feature Configuration: Configure desired MDE features and settings.
+3.	Policy Assignment: Create and assign policies to devices or device groups.
+
+Usage:
+After deployment and configuration, MDE is ready to protect your organization. Microsoft recommends starting with a small test group before wider deployment. Using MECM or Intune simplifies deployment management. For standalone installations, ensure appropriate installation permissions. Monitor the deployment process to ensure all devices are successfully onboarded.
+
+Initial Configuration Best Practices:
+These steps are crucial for maximizing MDE effectiveness:
+1.	Enable Recommended ASR Rules: Enable all recommended Attack Surface Reduction (ASR) rules to minimize attack vectors. Review and customize as needed.
+2.	Configure Alerts and Reports: Configure alerts for suspicious activity and reports for security posture monitoring and trend identification.
+3.	Assign Policies: Assign MDE policies to devices and groups for comprehensive protection.
+4.	Configure Data Connectors (Optional): Integrate data from other security tools (SIEM, cloud security platforms) to enhance detection and response.
+5.	Enable Threat Hunting: Enable and utilize threat hunting tools to proactively identify and investigate potential threats.
+6.	Keep MDE Updated: Regularly update MDE to benefit from new features, security fixes, and performance improvements.
+By following these deployment and configuration steps, you can effectively leverage MDE to protect your organization from cyberattacks.
+
+
